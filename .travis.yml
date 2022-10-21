@@ -18,7 +18,7 @@ scripts:
  - docker tag udagram-reverseproxy mackray94/udagram-reverseproxy:v1
  - docker tag udagram-frontend mackray94/udagram-frontend:local
  
-push:
+after_script:
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
  - docker push mackray94/udagram-api-feed:v1
  - docker push mackray94/udagram-api-user:v1
