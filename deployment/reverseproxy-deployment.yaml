@@ -3,31 +3,31 @@ kind: Deployment
 metadata:
   name: reverseproxy-deployment
   labels:
-    app: reverseproxy
+    app.kubernetes.io/name: reverseproxy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: reverseproxy
+      app.kubernetes.io/name: reverseproxy
   template:
     metadata:
       labels:
-        app: reverseproxy
+        app.kubernetes.io/name: reverseproxy
     spec:
-      containers:
-      - name: reverseproxy
-        image: mackray94/udagram-reverseproxy:v1
-        imagePullPolicy: Always
-        ports:
+     containers:
+      - image: docker.io/mackray94/reverseproxy:v1   
+        name: reverseproxy
+        ports:  
         - containerPort: 8080
-        resources:
-          limits:
-            memory: 1024Mi
-            cpu: 500m
+          protocol: TCP
+        resources: 
           requests:
-            memory: 1024Mi
-            cpu: 500m
-      
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
+          
    
 
 

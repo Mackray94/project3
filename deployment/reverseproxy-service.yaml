@@ -5,9 +5,11 @@ metadata:
   labels: 
     app: reverseproxy 
 spec:
+  type: ClusterIP
   selector:
-    app.kubernetes.io/name: reverseproxy
+    app: reverseproxy
   ports:
     - protocol: TCP
+      name: "8080"
       port: 8080
       targetPort: 8080

@@ -5,7 +5,8 @@ kind: Service
 metadata:
 
   name: backend-user-service
-
+  labels: 
+    app: backend-user 
 spec:
 
   selector:

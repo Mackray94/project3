@@ -55,7 +55,13 @@ spec:
             memory: 256Mi
 
             cpu: 200m
-      
+        envFrom:
+          - secretRef:
+              name: env-secret
+          -  configMapRef:
+              name: env-configmap
+          - secretRef:
+              name: aws-secret
    
 
 

@@ -5,7 +5,8 @@ kind: Service
 metadata:
 
   name: backend-feed-service
-
+  labels: 
+    app: backend-feed 
 
 spec:
 
