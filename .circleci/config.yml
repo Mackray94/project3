@@ -5,6 +5,9 @@ jobs:
   lint-app:
     docker:
       - image: circleci/node:12.0.0
+        auth:
+          username: mackray94
+          password: $DOCKER_PASSWORD
     steps:
       - checkout
   build-docker:
@@ -31,11 +34,8 @@ jobs:
              docker build -t udagram-frontend ./udagram-frontend
              docker tag udagram-frontend mackray94/udagram-frontend:local
 
-             echo "-----------All image successfully built---------"
-
-             echo "---------login docker--------"
-              echo "$DOCKER_PASS" | docker login --username  --password-stdin
-             
+             echo "-----------All image successfully built-------
+             docker login --mackray94 -p $DOCKER_PASSWORD
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
              docker push mackray94/udagram-api-user:v3
