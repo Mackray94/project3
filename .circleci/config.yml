@@ -34,7 +34,7 @@ jobs:
              echo "-----------All image successfully built---------"
 
              echo "---------login docker--------"
-             docker login -u mackray94 -p $DOCKERPASS
+              echo "$DOCKER_PASS" | docker login --docker_username  --password-stdin
              
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
@@ -44,6 +44,8 @@ jobs:
 workflows:
   default:
     jobs:
-      - lint-app
+      - lint-app:
+           context:
+            - lint-app 
       - build-docker:
            requires: [lint-app]
