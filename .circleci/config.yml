@@ -18,13 +18,14 @@ jobs:
       - run: 
           name: Build docker container
           command:
-             echo"-----------installing dependecies--------"
+             echo "-----------installing dependecies--------"
              sudo curl -LO https:/nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.https:/nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.xz
              sudo tar -xvf node-v18.0.0-linux-x64.tar.xz
              sudo cp -r node-v18.0.0-linux-x64{bin, include, lib, share}/usr/
              node --version => v18.0.0
              sudo apt install nodejs 
-             echo"-----------building image---------"
+
+             echo "-----------building image---------"
              docker build -t udagram-api-feed ./udagram-api-feed
              docker tag udagram-api-feed mackray94/udagram-api-feed:v3
 
@@ -37,19 +38,16 @@ jobs:
              docker build -t udagram-frontend ./udagram-frontend
              docker tag udagram-frontend mackray94/udagram-frontend:local
 
-             echo"-----------All image successfully built---------"
+             echo "-----------All image successfully built---------"
 
              echo "---------login docker--------"
              docker login -u "mackray94" --p $DOCKERPASS
              
-             echo"-----------pushing images to docker--------" 
-             docker push mackray94/udagram-api-feed:v1
-             docker push mackray94/udagram-api-user:v1
-             docker push mackray94/reverseproxy:v1
+             echo "-----------pushing images to docker--------" 
+             docker push mackray94/udagram-api-feed:v3
+             docker push mackray94/udagram-api-user:v3
+             docker push mackray94/reverseproxy:v3
              docker push mackray94/udagram-frontend:local
-
-
-# Orchestrate our job run sequence
 workflows:
   defaults:
     jobs:
