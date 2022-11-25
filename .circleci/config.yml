@@ -35,7 +35,9 @@ jobs:
              docker tag udagram-frontend mackray94/udagram-frontend:local
 
              echo "-----------All image successfully built-------
+             
              docker login --mackray94 -p $DOCKER_PASSWORD
+
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
              docker push mackray94/udagram-api-user:v3
