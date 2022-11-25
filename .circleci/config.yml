@@ -26,7 +26,7 @@ jobs:
              docker tag udagram-api-user mackray94/udagram-api-user:v3
 
              docker build -t udagram-reverseproxy ./udagram-reverseproxy
-             docker tag udagram-reverseproxy mackray94/reverseproxy:mackray94/reverseproxy:v3
+             docker tag udagram-reverseproxy mackray94/reverseproxy:v3
 
              docker build -t udagram-frontend ./udagram-frontend
              docker tag udagram-frontend mackray94/udagram-frontend:local
