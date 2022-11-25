@@ -2,7 +2,7 @@ version: 2.1
 
 # Define the jobs we want to run for this project
 jobs:
-  build:
+  lint-app:
     docker:
       - image: circleci/node:16.17
         auth:
@@ -51,7 +51,8 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  defaults:
     jobs:
-      - build
-      - test
+      - lint-app
+      - build-docker:
+           requires: [lint-app]
