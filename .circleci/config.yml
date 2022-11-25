@@ -34,7 +34,7 @@ jobs:
              echo "-----------All image successfully built---------"
 
              echo "---------login docker--------"
-              echo "$DOCKER_PASS" | docker login --docker_username  --password-stdin
+              echo "$DOCKER_PASS" | docker login --username  --password-stdin
              
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
