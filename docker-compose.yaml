@@ -6,9 +6,9 @@ services:
           - 8080:8080
       restart: always
       depends_on:
-        - backend-users
+        - backend-user
         - backend-feed
-  backend-users:
+  backend-user:
     image: udagram-api-user
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
