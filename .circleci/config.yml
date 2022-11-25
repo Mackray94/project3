@@ -34,7 +34,7 @@ jobs:
              echo "-----------All image successfully built---------"
 
              echo "---------login docker--------"
-             docker login -u "mackray94" -p $DOCKERPASS
+             docker login -u mackray94 -p $DOCKERPASS
              
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
