@@ -4,17 +4,16 @@ version: 2.1
 jobs:
   lint-app:
     docker:
-      - image: circleci/node:16.17
+      - image: circleci/node:16.17.0
     steps:
       - checkout
-   
   build-docker:
     machine: true
     steps:
       - checkout
       - run: 
           name: Build docker container
-          command:
+          command: |
              echo "-----------installing dependecies--------"
              sudo curl -LO https:/nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.https:/nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.xz
              sudo tar -xvf node-v18.0.0-linux-x64.tar.xz
