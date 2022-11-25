@@ -51,7 +51,7 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  defaults:
+  build_and_test:
     jobs:
       - build
       - test
