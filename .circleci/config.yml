@@ -49,7 +49,7 @@ jobs:
              docker push mackray94/reverseproxy:v3
              docker push mackray94/udagram-frontend:local
 workflows:
-  defaults:
+  default:
     jobs:
       - lint-app
       - build-docker:
