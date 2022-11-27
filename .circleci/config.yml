@@ -5,9 +5,6 @@ jobs:
   lint-app:
     docker:
       - image: circleci/node:13.8.0
-        auth:
-          username: mackray94
-          password: DOCKER_PASSWORD
     steps:
       - checkout
   build-docker:
@@ -46,8 +43,6 @@ jobs:
 workflows:
   default:
     jobs:
-      - lint-app:
-           context:
-            - lint-app 
+      - lint-app
       - build-docker:
            requires: [lint-app]
