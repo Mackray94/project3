@@ -31,7 +31,7 @@ jobs:
              docker build -t udagram-frontend ./udagram-frontend
              docker tag udagram-frontend mackray94/udagram-frontend:local
 
-             echo "-----------All image successfully built-------
+             echo "-----------All image successfully built-------"
              
              echo DOCKER_PASSWORD | docker login -u DOCKER_USERNAME --password-stdin
 
