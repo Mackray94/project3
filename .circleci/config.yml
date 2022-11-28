@@ -33,7 +33,7 @@ jobs:
 
              echo "-----------All image successfully built-------"
              
-             docker login -u mackray94 -p DOCKER_PASSWORD
+             docker login -u mackray94 -p $DOCKER_PASSWORD
 
              echo "-----------pushing images to docker--------" 
              docker push mackray94/udagram-api-feed:v3
