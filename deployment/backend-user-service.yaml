@@ -8,15 +8,9 @@ metadata:
   labels: 
     app: backend-user 
 spec:
-
   selector:
-
     app.kubernetes.io/name: backend-user
-
   ports:
-
     - protocol: TCP
-
       port: 8080
-
       targetPort: 8080

@@ -1,39 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy-deployment
+  name: reverseproxy
   labels:
-    app.kubernetes.io/name: reverseproxy
+    app: reverseproxy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: reverseproxy
+      app: reverseproxy
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: reverseproxy
+        app: reverseproxy
     spec:
      containers:
-      - image: docker.io/mackray94/reverseproxy:v1   
+      - image: docker.io/mackray94/reverseproxy:v3
         name: reverseproxy
         ports:  
         - containerPort: 8080
           protocol: TCP
         resources: 
           requests:
-            memory: "1024Mi"
+            memory: "64Mi"
             cpu: "250m"
           limits:
             memory: "1024Mi"
             cpu: "500m"
-          
-   
+           
 
-
-
-
-
-
-
-  
