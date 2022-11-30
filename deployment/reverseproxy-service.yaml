@@ -9,6 +9,5 @@ spec:
     app: reverseproxy
   ports:
   - protocol: TCP
-    name: "8080"
     port: 8080
     targetPort: 8080

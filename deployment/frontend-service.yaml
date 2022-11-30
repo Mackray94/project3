@@ -6,9 +6,8 @@ metadata:
   name: frontend
 spec:
   ports:
-    - port: 8100
-      name: "8100"
-      targetPort: 80
+    - port: 80
+      targetPort: 8080
   selector:
     app: frontend
 
