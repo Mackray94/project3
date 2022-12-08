@@ -9,4 +9,4 @@ data:
    AWS_REGION: "us-east-1"
    AWS_PROFILE: "default"
    JWT_SECRET: "testing"
-   URL: "10.100.90.117"
+   URL: "10.100.64.185"

@@ -20,13 +20,13 @@ jobs:
 
              echo "-----------building image---------"
              docker build -t udagram-api-feed ./udagram-api-feed
-             docker tag udagram-api-feed mackray94/udagram-api-feed:v3
+             docker tag udagram-api-feed mackray94/udagram-api-feed:v4
 
              docker build -t udagram-api-user ./udagram-api-user
-             docker tag udagram-api-user mackray94/udagram-api-user:v3
+             docker tag udagram-api-user mackray94/udagram-api-user:v4
 
              docker build -t udagram-reverseproxy ./udagram-reverseproxy
-             docker tag udagram-reverseproxy mackray94/reverseproxy:v3
+             docker tag udagram-reverseproxy mackray94/reverseproxy:v4
 
              docker build -t udagram-frontend ./udagram-frontend
              docker tag udagram-frontend mackray94/udagram-frontend:local
@@ -36,9 +36,9 @@ jobs:
              docker login -u mackray94 -p $DOCKERPASS
 
              echo "-----------pushing images to docker--------" 
-             docker push mackray94/udagram-api-feed:v3
-             docker push mackray94/udagram-api-user:v3
-             docker push mackray94/reverseproxy:v3
+             docker push mackray94/udagram-api-feed:v4
+             docker push mackray94/udagram-api-user:v4
+             docker push mackray94/reverseproxy:v4
              docker push mackray94/udagram-frontend:local
 workflows:
   default:
