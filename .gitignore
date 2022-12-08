@@ -1,6 +1,7 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+deployment/
 *~
 *.sw[mnpcod]
 *.log
@@ -30,6 +31,7 @@ plugins/ios.json
 $RECYCLE.BIN/
 postgres_dev/
 logfile
+deployment/
 
 .DS_Store
 Thumbs.db
@@ -42,3 +44,4 @@ venv/
 !.elasticbeanstalk/*.global.yml
 set_env.sh
 set_env.sh
+deployment/
